@@ -5,6 +5,6 @@ class Solution(object):
         :rtype: bool
         """
         
-        second_number = ''.join([str(x)[i] for i in range(len(str(x)) - 1, -1, -1)])
+        reverse_x = ''.join([str(x)[i] for i in range(len(str(x)) - 1, -1, -1)])
         
-        return str(x) == second_number
+        return str(x) == reverse_x
