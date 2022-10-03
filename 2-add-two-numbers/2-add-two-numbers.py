@@ -12,11 +12,13 @@ class Solution(object):
         """
         results = ListNode()        
         final = results
+        ##carry 
         c = 0
         compute = 0
         while l1 or l2:
             a = 0
             b = 0 
+            
             if l1 is not None:
                 a = l1.val
                 l1 = l1.next
@@ -27,7 +29,7 @@ class Solution(object):
             
             compute = a + b + c
             
-            if len(str(compute)) > 1:
+            if len(str(compute)) == 2:
                 c = 1
                 final.next = ListNode(int(str(compute)[1]))
             else:
