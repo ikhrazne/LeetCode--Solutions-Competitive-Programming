@@ -4,4 +4,16 @@ class Solution(object):
         :type s: str
         :rtype: int
         """
-        return len(s.strip().split(' ')[-1])
+        counter = 0
+        
+        for i in range(len(s)):
+            value = s[len(s) - 1 - i]
+            
+            if value == ' ' and counter != 0:
+                break 
+            
+            if value != ' ':
+                counter += 1
+        
+        return counter 
+    #len(s.strip().split(' ')[-1])
