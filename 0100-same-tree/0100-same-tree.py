@@ -11,32 +11,15 @@ class Solution(object):
         :type q: TreeNode
         :rtype: bool
         """
-        tree1 = []
-        tree2 = []
+        if not p and not q:
+            return True
         
-        def preorder_traverse(root, which_tree):
-            
-            if root is None:
-                return 
-            
-            if which_tree == 'first':
-                tree1.append(root.val)
-            else:
-                tree2.append(root.val)
-            
-            if root.left is None and root.right is not None:
-                if which_tree == 'first':
-                    tree1.append(None)
-                else:
-                    tree2.append(None)
-                
-            preorder_traverse(root.left, which_tree)
-            preorder_traverse(root.right, which_tree)
-            
+        if not q or not p:
+            return False
+        if p.val != q.val:
+            return False
         
-        preorder_traverse(p, 'first')
-        preorder_traverse(q, 'second')
-        
-        return tree1 == tree2
+        return self.isSameTree(p.right, q.right) and \
+               self.isSameTree(p.left, q.left)
             
         
