@@ -35,7 +35,3 @@ class Solution(object):
             else:
                 result.next = ListNode(head.val)
                 result = result.next
-            
-            
-            
-            
